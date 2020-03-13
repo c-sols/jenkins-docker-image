@@ -1,8 +1,8 @@
-REPO_NAME=reiniel/jenkins-server
+REPO_NAME=reiniel/jenkins
 TAG=latest
 
 docker-build:
-	@docker build -t ${REPO_NAME}:${TAG} .
+	@docker build -t ${REPO_NAME}:${TAG} ./jenkins
 
 docker-push:
 	@docker push ${REPO_NAME}:${TAG}
