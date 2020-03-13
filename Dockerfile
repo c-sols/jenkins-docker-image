@@ -1,6 +1,4 @@
 FROM jenkins/jenkins:2.225-alpine
-LABEL company="Coding Solutions"
-LABEL version="0.0.1"
 
 ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
 
