@@ -46,9 +46,9 @@
 
           "# Startup jenkins\n",
           "cd /home/ec2-user/\n",
-          "git clone \n",
-          "rake db:migrate RAILS_ENV=production\n",
-          "script/server -e production &\n"
+          "git clone https://github.com/rhpereda/jenkins-server.git\n",
+          "cd jenkins-server\n",
+          "make docker-run\n"
         ]]}}
       }
     }
