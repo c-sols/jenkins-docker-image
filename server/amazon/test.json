@@ -1,0 +1,29 @@
+{
+  "Resources": {
+    "MyInstance": {
+      "Type": "AWS::EC2::Instance",
+      "Metadata": {
+        "AWS::CloudFormation::Init": {
+          "config": {
+            "packages": {
+              "yum": {
+                "docker": [],
+                "git": []
+              }
+            },
+            "services": {
+              "sysvinit": {
+                "docker": {
+                  "enabled": "true",
+                  "ensureRunning": "true"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Properties": {
+      }
+    }
+  }
+}

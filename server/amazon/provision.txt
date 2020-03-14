@@ -1,0 +1,8 @@
+#!/bin/bash
+yum update -y
+yum install docker
+systemctl enable docker
+systemctl start docker
+systemctl status docker
+
+yum install git
