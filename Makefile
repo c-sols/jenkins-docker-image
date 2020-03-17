@@ -1,5 +1,5 @@
 workspace=$(shell pwd)
-REPO_NAME=csolutions/jenkins-server
+REPO_NAME=csolutions/jenkins
 TAG=latest
 
 docker-build:
