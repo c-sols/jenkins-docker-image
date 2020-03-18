@@ -9,7 +9,7 @@ docker-push:
 	@docker push ${REPO_NAME}:${TAG}
 
 docker-run:
-	@docker run -u root -d -p 80:8080 -p 50000:50000 \
+	@docker run -d -p 80:8080 -p 50000:50000 \
 	-v $(which docker):/usr/bin/docker \
 	-v /var/run/docker.sock:/var/run/docker.sock \
 	-v csolutions_jenkins_data:/var/jenkins_home \
