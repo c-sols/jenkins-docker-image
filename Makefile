@@ -9,9 +9,12 @@ docker-push:
 	@docker push ${REPO_NAME}:${TAG}
 
 docker-run:
-	mkdir -p ~/jenkins_home/ && chmod -R 777 ~/jenkins_home/
 	@docker run -u root -d -p 80:8080 -p 50000:50000 \
-	-v ~/jenkins_home/:/var/Jenkins_home/ \
+	-v $(which docker):/usr/bin/docker \
 	-v /var/run/docker.sock:/var/run/docker.sock \
-	--name Jenkins --restart always \
+	-v jenkins_data:/var/Jenkins_home \
+	--name csolutions-ci --restart always \
 	${REPO_NAME}:${TAG}
+
+docker-kill:
+	@docker rm -f $$(docker ps -qa --filter name=csolutions-ci)
